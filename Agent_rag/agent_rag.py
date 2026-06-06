@@ -11,9 +11,8 @@ from langgraph.checkpoint.memory import InMemorySaver
 import streamlit as stream
 import os
 
-api_key = st.secrets["GOOGLE_API_KEY"]
+api_key = stream.secrets["GOOGLE_API_KEY"]
 os.environ["GOOGLE_API_KEY"] = api_key
-
 
 # data in the st session state
 
