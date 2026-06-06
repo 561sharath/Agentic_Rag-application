@@ -1,6 +1,5 @@
-from dotenv import load_dotenv
-load_dotenv()
-
+# from dotenv import load_dotenv
+# load_dotenv()
 from langchain_community.document_loaders import PyPDFLoader, PyPDFDirectoryLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
@@ -11,6 +10,9 @@ from langchain_community.vectorstores import InMemoryVectorStore
 from langgraph.checkpoint.memory import InMemorySaver 
 import streamlit as stream
 import os
+
+api_key = st.secrets["GOOGLE_API_KEY"]
+os.environ["GOOGLE_API_KEY"] = api_key
 
 
 # data in the st session state
