@@ -22,7 +22,7 @@ if "document_uploaded" not in stream.session_state:
 if "agent" not in stream.session_state:
     stream.session_state.agent = None
 
-if "vector_store" not in stream.session_state:
+if "vectorstore" not in stream.session_state:
     stream.session_state.vectorstore = None
 
 if "messages" not in stream.session_state:
@@ -112,7 +112,7 @@ if not stream.session_state.document_uploaded:
     if uploaded_file:
         with stream.spinner("Processing document..."):
             try:
-                path = "/doc_files/"
+                path = "doc_files"
                 os.makedirs(path, exist_ok=True)
 
                 for file in uploaded_file:
